@@ -105,8 +105,7 @@ myprops <- data.frame(
 #   print(i)
 #   X_c <- c(X_c,i)
 # }
-data$name <- rownames(data)
-rownames(data) <- NULL
+
 
 X_c <- ""
 for(i in 1:nrow(data)){
