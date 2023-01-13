@@ -25,20 +25,20 @@ colnames(seqvec)=newcolname
 seqvec=seqvec[-1,]
 seqvec$name=rownames(seqvec)
 
-ESM_1b=read.csv("./ESM-1b/Esm1b_train_features.CSV",check.names = F)
-ESM_1b=t(ESM_1b)
-ESM_1b=data.frame(ESM_1b,stringsAsFactors = F,check.names = F)
-newcolname=paste0("ESM_1b_features_",1:33)
-colnames(ESM_1b)=newcolname
-ESM_1b=ESM_1b[-1,]
-ESM_1b$name=rownames(ESM_1b)
+EMS_1b=read.csv("./ESM-1b/Esm1b_train_features.CSV",check.names = F)
+EMS_1b=t(EMS_1b)
+EMS_1b=data.frame(EMS_1b,stringsAsFactors = F,check.names = F)
+newcolname=paste0("EMS_1b_features_",1:33)
+colnames(EMS_1b)=newcolname
+EMS_1b=EMS_1b[-1,]
+EMS_1b$name=rownames(EMS_1b)
 
 RBP_prot_UniRep=merge(prot,UniRep_RBP,by.x = "name",by.y  = "name",sort = F)
 nonRBP_prot_UniRep=merge(prot,UniRep_nonRBP,by.x = "name",by.y  = "name",sort = F)
 RBP_prot_UniRep_seqvec=merge(RBP_prot_UniRep,seqvec,by.x = "name",by.y  = "name",sort = F)
 nonRBP_prot_UniRep_seqvec=merge(nonRBP_prot_UniRep,seqvec,by.x = "name",by.y  = "name",sort = F)
-RBP_all=merge(RBP_prot_UniRep_seqvec,ESM_1b,by.x = "name",by.y  = "name",sort = F)
-nonRBP_all=merge(nonRBP_prot_UniRep_seqvec,ESM_1b,by.x = "name",by.y  = "name",sort = F)
+RBP_all=merge(RBP_prot_UniRep_seqvec,EMS_1b,by.x = "name",by.y  = "name",sort = F)
+nonRBP_all=merge(nonRBP_prot_UniRep_seqvec,EMS_1b,by.x = "name",by.y  = "name",sort = F)
 rownames(RBP_all)=RBP_all$name
 rownames(nonRBP_all)=nonRBP_all$name
 RBP_all=RBP_all[,-1]
