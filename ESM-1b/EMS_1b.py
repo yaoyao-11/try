@@ -53,4 +53,4 @@ columns_name=[]
 for i in range(len(last_features[0])):
     columns_name.append("features_{}".format(i))
 need_data=pd.DataFrame(columns=columns_name,index=last_names,data=last_features)
-need_data.to_csv('yaoyao-11/Seq-RBPpred/ESM-1b/test_NonRBPs_522.csv',encoding='gbk')
+need_data.to_csv('yaoyao-11/Seq-RBPpred/EMS_1b/test_NonRBPs_522.csv',encoding='gbk')
