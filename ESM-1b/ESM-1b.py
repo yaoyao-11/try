@@ -3,6 +3,7 @@
 
 from transformers import ESMForMaskedLM, ESMTokenizer
 import pandas as pd
+from tqdm import tqdm
 tokenizer = ESMTokenizer.from_pretrained("facebook/esm-1b", do_lower_case=False )
 model = ESMForMaskedLM.from_pretrained("facebook/esm-1b")
 
